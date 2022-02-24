@@ -42,7 +42,8 @@ public class PcAttestationServiceImpl extends ServiceImpl<PcAttestationMapper, P
             endIndex = total;
         }
 
-        page = new MyPage(pcAttestationsList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(pcAttestationsList.subList(beginIndex, endIndex), total);
+        page = new MyPage(pcAttestationsList, total);
 
         return page;
     }

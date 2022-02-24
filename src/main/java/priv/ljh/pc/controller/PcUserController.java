@@ -3,6 +3,8 @@ package priv.ljh.pc.controller;
 
 import cn.hutool.core.util.RandomUtil;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -142,7 +144,9 @@ public class PcUserController {
     @GetMapping
     public ResultResponse queryEmployee(@RequestParam("page") int pageNo, @RequestParam("limit") int limit, @RequestParam("sort") String idSort){
         ResultResponse res = null;
+        PageHelper.startPage(pageNo,limit);
         List<PcUser > users = pcUserMapper.selectList(null);
+        PageInfo info = new PageInfo(users);
         log.info("users====>"+users);
         MyPage page = this.pcUserService.searchPcUser(pageNo, limit, idSort,users);
         res = new ResultResponse(Constants.STATUS_OK, Constants.MESSAGE_OK, page);

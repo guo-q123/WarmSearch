@@ -56,7 +56,9 @@ public class PcUserServiceImpl extends ServiceImpl<PcUserMapper, PcUser> impleme
             endIndex = total;
         }
 
-        page = new MyPage(pcUsersList.subList(beginIndex, endIndex), total);
+
+//        page = new MyPage(pcUsersList.subList(beginIndex, endIndex), total);
+        page = new MyPage(pcUsersList, total);
 
         return page;
     }

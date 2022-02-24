@@ -12,7 +12,7 @@ import priv.ljh.utils.ResultResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
+//import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 /**
  * UploadFileServiceImpl

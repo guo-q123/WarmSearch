@@ -67,7 +67,8 @@ public class GoodsDetailServiceImpl extends ServiceImpl<GoodsDetailMapper, Goods
             endIndex = total;
         }
 
-        page = new MyPage(goodsDetailsList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(goodsDetailsList.subList(beginIndex, endIndex), total);
+        page = new MyPage(goodsDetailsList, total);
 
         return page;
     }

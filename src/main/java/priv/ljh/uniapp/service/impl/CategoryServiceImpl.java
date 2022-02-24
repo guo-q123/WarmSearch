@@ -82,7 +82,8 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryMapper, Category> i
             endIndex = total;
         }
 
-        page = new MyPage(categoriesList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(categoriesList.subList(beginIndex, endIndex), total);
+        page = new MyPage(categoriesList, total);
 
         return page;
     }

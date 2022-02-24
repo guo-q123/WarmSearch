@@ -51,7 +51,8 @@ public class SFindServiceImpl extends ServiceImpl<SFindMapper, SFind> implements
             endIndex = total;
         }
 
-        page = new MyPage(sFindsList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(sFindsList.subList(beginIndex, endIndex), total);
+        page = new MyPage(sFindsList, total);
 
         return page;
     }

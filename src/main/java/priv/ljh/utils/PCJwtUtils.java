@@ -4,6 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTCreator;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.Calendar;
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.Map;
  * @Date 2021/3/14 19:20
  *
  */
+@Configuration
 public class PCJwtUtils {
 
     private static final String SINGNATURE = "^lijinghailjh@163.com*101599";

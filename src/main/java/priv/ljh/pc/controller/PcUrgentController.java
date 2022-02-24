@@ -2,6 +2,8 @@ package priv.ljh.pc.controller;
 
 
 import cn.hutool.core.util.RandomUtil;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -115,7 +117,9 @@ public class PcUrgentController {
     @GetMapping
     public ResultResponse queryPcCarousel(@RequestParam("page") int pageNo, @RequestParam("limit") int limit, @RequestParam("sort") String idSort){
         ResultResponse res = null;
+        PageHelper.startPage(pageNo,limit);
         List<PcUrgent> pcUrgent = pcUrgentMapper.selectList(null);
+        PageInfo info = new PageInfo();
         log.info("pcUrgent====>"+pcUrgent);
         MyPage page = this.pcUrgentService.searchPcUrgent(pageNo, limit, idSort,pcUrgent);
         res = new ResultResponse(Constants.STATUS_OK, Constants.MESSAGE_OK,page);

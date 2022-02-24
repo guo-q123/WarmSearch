@@ -42,7 +42,8 @@ public class PcRecentServiceImpl extends ServiceImpl<PcRecentMapper, PcRecent> i
             endIndex = total;
         }
 
-        page = new MyPage(PcRecentlList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(PcRecentlList.subList(beginIndex, endIndex), total);
+        page = new MyPage(PcRecentlList, total);
 
         return page;
     }

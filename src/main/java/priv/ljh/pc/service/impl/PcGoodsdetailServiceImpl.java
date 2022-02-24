@@ -42,7 +42,8 @@ public class PcGoodsdetailServiceImpl extends ServiceImpl<PcGoodsdetailMapper, P
             endIndex = total;
         }
 
-        page = new MyPage(pcGoodsdetailsList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(pcGoodsdetailsList.subList(beginIndex, endIndex), total);
+        page = new MyPage(pcGoodsdetailsList, total);
 
         return page;
     }
@@ -66,7 +67,8 @@ public class PcGoodsdetailServiceImpl extends ServiceImpl<PcGoodsdetailMapper, P
             endIndex = total;
         }
 
-        page = new MyPage(pcGoodsdetailsList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(pcGoodsdetailsList.subList(beginIndex, endIndex), total);
+        page = new MyPage(pcGoodsdetailsList, total);
 
         return page;
     }

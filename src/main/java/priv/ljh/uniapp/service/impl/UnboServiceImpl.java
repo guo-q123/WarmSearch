@@ -41,7 +41,8 @@ public class UnboServiceImpl extends ServiceImpl<UnboMapper, Unbo> implements Un
             endIndex = total;
         }
 
-        page = new MyPage(unbosList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(unbosList.subList(beginIndex, endIndex), total);
+        page = new MyPage(unbosList, total);
 
         return page;
     }

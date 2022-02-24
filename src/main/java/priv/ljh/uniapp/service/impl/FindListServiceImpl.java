@@ -43,7 +43,8 @@ public class FindListServiceImpl extends ServiceImpl<FindListMapper, FindList> i
             endIndex = total;
         }
 
-        page = new MyPage(findListsList .subList(beginIndex, endIndex), total);
+//        page = new MyPage(findListsList .subList(beginIndex, endIndex), total);
+        page = new MyPage(findListsList, total);
 
         return page;
     }

@@ -2,6 +2,8 @@ package priv.ljh.uniapp.controller;
 
 
 import cn.hutool.core.util.RandomUtil;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -87,7 +89,9 @@ public class CategoryController {
     @GetMapping("/all")
     public ResultResponse queryCategory1(@RequestParam("page") int pageNo, @RequestParam("limit") int limit, @RequestParam("sort") String idSort){
         ResultResponse res = null;
+        PageHelper.startPage(pageNo,limit);
         List<Category> Allcategories1 = categoryMapper.selectList(null);
+        PageInfo info = new PageInfo(Allcategories1);
         log.info("categories====>"+Allcategories1);
         MyPage page = this.categoryService.searchAllCategory(pageNo, limit, idSort,Allcategories1);
         res = new ResultResponse(Constants.STATUS_OK, Constants.MESSAGE_OK, page);

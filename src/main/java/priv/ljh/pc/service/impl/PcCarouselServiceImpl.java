@@ -41,7 +41,8 @@ public class PcCarouselServiceImpl extends ServiceImpl<PcCarouselMapper, PcCarou
             endIndex = total;
         }
 
-        page = new MyPage(pcCarouselList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(pcCarouselList.subList(beginIndex, endIndex), total);
+        page = new MyPage(pcCarouselList, total);
 
         return page;
     }

@@ -43,7 +43,8 @@ public class PcUrgentServiceImpl extends ServiceImpl<PcUrgentMapper, PcUrgent> i
             endIndex = total;
         }
 
-        page = new MyPage(pcUrgentsList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(pcUrgentsList.subList(beginIndex, endIndex), total);
+        page = new MyPage(pcUrgentsList, total);
 
         return page;
     }

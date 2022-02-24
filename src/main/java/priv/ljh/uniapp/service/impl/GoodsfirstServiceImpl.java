@@ -42,7 +42,8 @@ public class GoodsfirstServiceImpl extends ServiceImpl<GoodsfirstMapper, Goodsfi
             endIndex = total;
         }
 
-        page = new MyPage(goodsfirstsList.subList(beginIndex, endIndex), total);
+//        page = new MyPage(goodsfirstsList.subList(beginIndex, endIndex), total);
+        page = new MyPage(goodsfirstsList, total);
 
         return page;
     }

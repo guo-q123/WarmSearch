@@ -2,6 +2,8 @@ package priv.ljh.uniapp.controller;
 
 
 import cn.hutool.core.util.RandomUtil;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -111,7 +113,9 @@ public class UnboController {
     @GetMapping
     public ResultResponse queryUnbo(@RequestParam("page") int pageNo, @RequestParam("limit") int limit, @RequestParam("sort") String idSort){
         ResultResponse res = null;
+        PageHelper.startPage(pageNo,limit);
         List<Unbo> unbos = unboMapper.selectList(null);
+        PageInfo info = new PageInfo(unbos);
         log.info("unbos====>"+unbos);
         MyPage page = this.unboService.searchUnbo(pageNo, limit, idSort,unbos);
         res = new ResultResponse(Constants.STATUS_OK, Constants.MESSAGE_OK,page);

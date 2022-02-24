@@ -2,6 +2,8 @@ package priv.ljh.uniapp.controller;
 
 
 import cn.hutool.core.util.RandomUtil;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -132,7 +134,9 @@ public class GoodsDetailController {
     @GetMapping("/all")
     public ResultResponse queryGoodsDetail1(@RequestParam("page") int pageNo, @RequestParam("limit") int limit, @RequestParam("sort") String idSort){
         ResultResponse res = null;
+        PageHelper.startPage(pageNo,limit);
         List<GoodsDetail> goodsDetails = goodsDetailMapper.selectList(null);
+        PageInfo info = new PageInfo(goodsDetails);
         log.info("goodsDetails====>"+goodsDetails);
         MyPage page = this.goodsDetailService.searchGoodsDetail1(pageNo, limit, idSort,goodsDetails);
         res = new ResultResponse(Constants.STATUS_OK, Constants.MESSAGE_OK,page);
