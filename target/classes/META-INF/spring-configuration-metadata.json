@@ -1,0 +1,12 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "priv.zhf.config.MyDruid",
+      "sourceMethod": "DruidDataSource()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
