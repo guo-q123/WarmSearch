@@ -13,6 +13,8 @@ public class WarmSearchApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(WarmSearchApplication.class, args);
+        System.out.println("swagger-ui=\t "+"http:localhost:8091/swagger-ui.html");
+        System.out.println("base-url=\t"+" http:localhost:8091");
     }
 
 }
